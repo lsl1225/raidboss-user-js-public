@@ -187,7 +187,7 @@ if (
   }
   function getClearMarkQueue(localOnly = ifMissing(), delayMs = 0) {
     return localOnly
-      ? markTypes.map((v, i) => ({ c: "mark", p: JSON.stringify({ ActorID: 0xe000000, MarkType: v, LocalOnly: true, d: i === 0 ? delayMs : 0 }) }))
+      ? markTypes.map((v, i) => ({ c: "mark", p: JSON.stringify({ ActorID: 0xe000000, MarkType: v, LocalOnly: true }), d: i === 0 ? delayMs : 0 }))
       : [
         { c: "DoTextCommand", p: "/mk off <1>", d: delayMs },
         { c: "DoTextCommand", p: "/mk off <2>" },
